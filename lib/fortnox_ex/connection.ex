@@ -19,8 +19,8 @@ defmodule FortnoxEx.Connection do
   @spec new(String.t, String.t) :: Tesla.Env.client
   def new(client_secret, access_token) do
     headers = [
-      {"Client-Secret", client_secret},
-      {"Access-Token", access_token},
+      {"Authorization", "Bearer #{access_token}"},
+      {"Content-Type", "application/json"}
     ]
 
     middleware = [
@@ -61,7 +61,7 @@ defmodule FortnoxEx.Connection do
   def get_access_token(client_secret, authorization_code) do
     headers = [
       {"Client-Secret", client_secret},
-      {"Authorization-Code", authorization_code}
+      {"Authorization-Code", authorization_code},
     ]
 
     middleware = [

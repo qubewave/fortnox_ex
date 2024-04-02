@@ -1,4 +1,5 @@
 {
     "invokerPackage": "FortnoxEx",
-    "packageName": "fortnox_ex"
+    "packageName": "fortnox_ex",
+    "generateAliasAsModel": true
 }

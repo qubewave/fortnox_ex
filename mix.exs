@@ -2,7 +2,7 @@ defmodule FortnoxEx.Mixfile do
   use Mix.Project
 
   @version "0.4.2"
-  @github_url "https://github.com/rsystem-se/fortnox_ex"
+  @github_url "https://github.com/qubewave/fortnox_ex"
 
   def project do
     [
@@ -41,12 +41,13 @@ defmodule FortnoxEx.Mixfile do
       {:hackney, "~> 1.17"},
       {:poison, "~> 3.0"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
+      {:httpoison, "~> 2.1.0"}
     ]
   end
 
   defp package do
     [
-      maintainers: ["Nils Ivanson"],
+      maintainers: ["Anton Peetso", "Nils Ivanson"],
       licenses: ["MIT"],
       links: %{
         "GitHub" => @github_url

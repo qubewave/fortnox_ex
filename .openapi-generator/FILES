@@ -9,6 +9,7 @@ lib/fortnox_ex/api/accounts_resource.ex
 lib/fortnox_ex/api/archive_resource.ex
 lib/fortnox_ex/api/article_file_connections_resource.ex
 lib/fortnox_ex/api/articles_resource.ex
+lib/fortnox_ex/api/articles_resource_articles.ex
 lib/fortnox_ex/api/asset_file_connection_resource.ex
 lib/fortnox_ex/api/asset_types_resource.ex
 lib/fortnox_ex/api/assets_resource.ex
@@ -29,6 +30,7 @@ lib/fortnox_ex/api/customers_resource.ex
 lib/fortnox_ex/api/employees_resource.ex
 lib/fortnox_ex/api/eu_vat_limit_regulation_resource.ex
 lib/fortnox_ex/api/expenses_resource.ex
+lib/fortnox_ex/api/finance_invoices_resource.ex
 lib/fortnox_ex/api/financial_years_resource.ex
 lib/fortnox_ex/api/inbox_resource.ex
 lib/fortnox_ex/api/incoming_goods_resource.ex
@@ -48,6 +50,7 @@ lib/fortnox_ex/api/prices_resource.ex
 lib/fortnox_ex/api/print_templates_resource.ex
 lib/fortnox_ex/api/projects_resource.ex
 lib/fortnox_ex/api/purchase_order_resource.ex
+lib/fortnox_ex/api/registrations_resource.ex
 lib/fortnox_ex/api/salary_transactions_resource.ex
 lib/fortnox_ex/api/schedule_times_resource.ex
 lib/fortnox_ex/api/sie_resource.ex
@@ -66,6 +69,7 @@ lib/fortnox_ex/api/terms_of_deliveries_resource.ex
 lib/fortnox_ex/api/terms_of_payments_resource.ex
 lib/fortnox_ex/api/trusted_email_senders_resource.ex
 lib/fortnox_ex/api/units_resource.ex
+lib/fortnox_ex/api/vacation_debt_basis_resource.ex
 lib/fortnox_ex/api/voucher_file_connections_resource.ex
 lib/fortnox_ex/api/voucher_series_resource.ex
 lib/fortnox_ex/api/vouchers_resource.ex
@@ -95,6 +99,7 @@ lib/fortnox_ex/model/article_file_connection_list_item_wrap.ex
 lib/fortnox_ex/model/article_file_connection_wrap.ex
 lib/fortnox_ex/model/article_list_item.ex
 lib/fortnox_ex/model/article_list_item_list.ex
+lib/fortnox_ex/model/article_registration.ex
 lib/fortnox_ex/model/article_wrap.ex
 lib/fortnox_ex/model/asset.ex
 lib/fortnox_ex/model/asset_file_connection.ex
@@ -109,6 +114,7 @@ lib/fortnox_ex/model/attendance_transaction_list_item.ex
 lib/fortnox_ex/model/attendance_transaction_list_item_list.ex
 lib/fortnox_ex/model/attendance_transaction_wrap.ex
 lib/fortnox_ex/model/average_cost.ex
+lib/fortnox_ex/model/base_article_registration.ex
 lib/fortnox_ex/model/company_info.ex
 lib/fortnox_ex/model/company_info_wrap.ex
 lib/fortnox_ex/model/company_settings.ex
@@ -135,6 +141,8 @@ lib/fortnox_ex/model/cost_center_wrap.ex
 lib/fortnox_ex/model/create_asset.ex
 lib/fortnox_ex/model/create_asset_file_connection.ex
 lib/fortnox_ex/model/create_asset_wrap.ex
+lib/fortnox_ex/model/create_payload.ex
+lib/fortnox_ex/model/create_payload_wrap.ex
 lib/fortnox_ex/model/currency.ex
 lib/fortnox_ex/model/currency_list.ex
 lib/fortnox_ex/model/currency_wrap.ex
@@ -159,6 +167,7 @@ lib/fortnox_ex/model/depreciation.ex
 lib/fortnox_ex/model/depreciation_response.ex
 lib/fortnox_ex/model/depreciation_response_wrap.ex
 lib/fortnox_ex/model/depreciation_wrap.ex
+lib/fortnox_ex/model/detailed_registration.ex
 lib/fortnox_ex/model/document_reference.ex
 lib/fortnox_ex/model/employee.ex
 lib/fortnox_ex/model/employee_dated_schedule.ex
@@ -207,6 +216,8 @@ lib/fortnox_ex/model/invoice_payment_list_item.ex
 lib/fortnox_ex/model/invoice_payment_list_item_list.ex
 lib/fortnox_ex/model/invoice_payment_wrap.ex
 lib/fortnox_ex/model/invoice_payment_write_off.ex
+lib/fortnox_ex/model/invoice_response.ex
+lib/fortnox_ex/model/invoice_response_wrap.ex
 lib/fortnox_ex/model/invoice_wrap.ex
 lib/fortnox_ex/model/label.ex
 lib/fortnox_ex/model/label_list.ex
@@ -237,6 +248,8 @@ lib/fortnox_ex/model/order_list_item.ex
 lib/fortnox_ex/model/order_list_item_list.ex
 lib/fortnox_ex/model/order_order_row.ex
 lib/fortnox_ex/model/order_wrap.ex
+lib/fortnox_ex/model/pause_payload.ex
+lib/fortnox_ex/model/pause_payload_wrap.ex
 lib/fortnox_ex/model/predefined_account.ex
 lib/fortnox_ex/model/predefined_account_list.ex
 lib/fortnox_ex/model/predefined_account_wrap.ex
@@ -260,7 +273,9 @@ lib/fortnox_ex/model/purchase_order.ex
 lib/fortnox_ex/model/purchase_order_mail_settings.ex
 lib/fortnox_ex/model/purchase_order_row.ex
 lib/fortnox_ex/model/purchase_order_row_note.ex
+lib/fortnox_ex/model/registration_code.ex
 lib/fortnox_ex/model/release_parent_order.ex
+lib/fortnox_ex/model/report_payment_payload.ex
 lib/fortnox_ex/model/response_state_change.ex
 lib/fortnox_ex/model/salary_transaction.ex
 lib/fortnox_ex/model/salary_transaction_list_item.ex
@@ -316,6 +331,11 @@ lib/fortnox_ex/model/terms_of_delivery_wrap.ex
 lib/fortnox_ex/model/terms_of_payment.ex
 lib/fortnox_ex/model/terms_of_payment_list.ex
 lib/fortnox_ex/model/terms_of_payment_wrap.ex
+lib/fortnox_ex/model/tr_cost_center.ex
+lib/fortnox_ex/model/tr_customer.ex
+lib/fortnox_ex/model/tr_item.ex
+lib/fortnox_ex/model/tr_item_price.ex
+lib/fortnox_ex/model/tr_project.ex
 lib/fortnox_ex/model/trusted_email_sender.ex
 lib/fortnox_ex/model/trusted_email_sender_rejected_sender.ex
 lib/fortnox_ex/model/trusted_email_sender_trusted_sender.ex
@@ -326,6 +346,9 @@ lib/fortnox_ex/model/unit_list.ex
 lib/fortnox_ex/model/unit_wrap.ex
 lib/fortnox_ex/model/update_asset.ex
 lib/fortnox_ex/model/update_asset_wrap.ex
+lib/fortnox_ex/model/vacation_debt_basis.ex
+lib/fortnox_ex/model/vacation_debt_basis_employee.ex
+lib/fortnox_ex/model/vacation_debt_basis_wrap.ex
 lib/fortnox_ex/model/voucher.ex
 lib/fortnox_ex/model/voucher_file_connection.ex
 lib/fortnox_ex/model/voucher_file_connection_list.ex
